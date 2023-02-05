@@ -9,7 +9,7 @@ data <- read.csv("https://github.com/mollywilshaw/Final-Year-Project-Poster/raw/
 # Load area data:
 counties <- read.csv("https://github.com/mollywilshaw/Final-Year-Project-Poster/raw/main/Data/Local_Authority_District_to_County_(April_2021)_Lookup_in_England%20%5B5%5D.csv")
 
-# Join these datasets and select the relevant columns
+# Join these data sets and select the relevant columns
 lawcounties <- left_join(data, counties, by=c("la_name"="LAD21NM"))
 lawcounties <- lawcounties|>
   select(c(1,12))
@@ -50,5 +50,5 @@ lawcounties[lawcounties$la_name=="Corby"|lawcounties$la_name=="Kettering"|lawcou
 lawcounties[lawcounties$la_name=="Northampton"|lawcounties$la_name=="Daventry"|lawcounties$la_name=="South Northamptonshire"|lawcounties$la_name=="West Northamptonshire",2] <- "West Northamptonshire"
 lawcounties[lawcounties$la_name=="Hackney and City of London",2] <- "Inner London"
 
-# Save the new dataset
+# Save the new data set
 #write.csv(lawcounties,"la_with_areas.csv", row.names = FALSE)
