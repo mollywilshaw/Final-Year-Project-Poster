@@ -288,7 +288,7 @@ p <- ggplot(plot.data, aes(x=date, y=new_cases, color=cat, linetype=cat)) + geom
 # Again we use the code from https://github.com/tidyverse/ggplot2/issues/2096 to colour the facet titles according to the area:
 g <- ggplot_gtable(ggplot_build(p))
 striprt <- which( grepl('strip-1', g$layout$name) | grepl('strip-t', g$layout$name) )
-fills <- c('deepskyblue','yellow','red')
+fills <- c('red','yellow','deepskyblue')
 k <- 1
 for (i in striprt) {
   j <- which(grepl('rect', g$grobs[[i]]$grobs[[1]]$childrenOrder))
